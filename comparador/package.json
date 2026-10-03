@@ -2,8 +2,9 @@
   "name": "comparador",
   "version": "1.0.0",
   "description": "Aplicação web que compara o custo de viagem entre um carro elétrico e um a combustão, dado um ponto de partida e um destino.",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

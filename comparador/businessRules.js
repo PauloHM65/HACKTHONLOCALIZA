@@ -1,7 +1,7 @@
 // businessRules.js
 // Responsabilidade: orquestrar os serviços e aplicar as regras de cálculo
-const { buscarDistancia } = require('./services/mapService');
-const { obterDadosVeiculos } = require('./services/vehicleData');
+const { buscarDistancia } = require('./src/services/mapService');
+const { obterDadosVeiculos } = require('./src/services/vehicleData');
 
 /**
  * Calcula a comparação de custo entre veículo elétrico e a combustão.

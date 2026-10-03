@@ -6,15 +6,23 @@ Aplicação web que compara o custo de viagem entre um carro elétrico e um a co
 
 ```
 comparador/
-├── server.js                  # Servidor Express (porta 3000)
-├── businessRules.js           # Regras de cálculo e orquestração
-├── services/
+├── src/server.js              # Servidor Express (porta 3000)
+├── src/routes/
+│   ├── apiRoutes.js           # Rotas da API
+│   └── pageRoutes.js          # Rotas das páginas
+├── src/services/
 │   ├── mapService.js          # Integração com API de mapas (distância)
 │   └── vehicleData.js         # Dados dos veículos (consumo, preços)
-├── public/
-│   ├── index.html             # Interface do usuário
-│   ├── index.css              # Estilos
-│   └── app.js                 # Lógica do frontend
+├── businessRules.js           # Regras de cálculo e orquestração
+├── src/public/
+│   ├── eletric.html           # Home Localiza Assinatura (protótipo)
+│   ├── css/
+│   │   ├── eletric.css        # Estilos da página Localiza
+│   │   └── index.css          # Estilos do comparador
+│   ├── js/
+│   │   ├── eletric.js         # Carrossel e menu responsivo
+│   │   └── app.js             # Lógica do comparador
+│   └── index.html             # Interface do comparador
 └── package.json
 ```
 
@@ -33,7 +41,7 @@ cd comparador
 npm install
 
 # 3. Inicie o servidor
-node server.js
+npm start
 ```
 
 O terminal vai mostrar:
@@ -42,7 +50,9 @@ O terminal vai mostrar:
 🚀 Servidor rodando em http://localhost:3000
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no navegador.
+Abra [http://localhost:3000](http://localhost:3000) para o comparador ou [http://localhost:3000/eletric.html](http://localhost:3000/eletric.html) para a Home Localiza Assinatura.
+
+Também é possível acessar a Home pelo caminho `/eletric`. O CTA “Conheça os elétricos” aponta para `/eletricos`; enquanto a Central de descobertas não estiver implementada, essa rota retorna HTTP 501.
 
 ## Como usar
 
@@ -51,7 +61,7 @@ Abra [http://localhost:3000](http://localhost:3000) no navegador.
 3. Clique em **Comparar Consumo**
 4. Veja o resultado com custo de cada tipo de veículo e quem vence
 
-> **Nota:** Atualmente a distância é simulada (mock). Para usar distâncias reais, configure sua API Key do Google Maps em `services/mapService.js`.
+> **Nota:** Atualmente a distância é simulada (mock). Para usar distâncias reais, configure o serviço de mapas em `src/services/mapService.js`.
 
 ## Tecnologias
 

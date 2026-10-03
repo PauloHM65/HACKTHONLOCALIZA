@@ -1,7 +1,7 @@
 {
   "name": "comparador",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicação web que compara o custo de viagem entre um carro elétrico e um a combustão, dado um ponto de partida e um destino.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +12,6 @@
   "dependencies": {
     "axios": "^1.20.0",
     "express": "^5.2.1"
-  }
+  },
+  "devDependencies": {}
 }
